@@ -45,7 +45,7 @@ window.PORTFOLIO = {
   metrics: [
     { value: "10+",    suffix: "yrs", label: "Experience in CCM & document automation" },
     { value: "50",     suffix: "%",  label: "Processing time reduced for insurance client" },
-    { value: "10,000+",suffix: "",   label: "Document templates developed & delivered to production" },
+    { value: "10000+",suffix: "",   label: "Document templates developed & delivered to production" },
     { value: "5",    suffix: "",    label: "Specialised AI agents built into COMPASS" }
   ],
 
