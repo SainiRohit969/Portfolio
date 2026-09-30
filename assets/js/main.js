@@ -222,7 +222,7 @@
           if (!e.isIntersecting) return;
           qa(".metric__value strong", e.target.parentElement || list).forEach(num => {
             const raw = num.textContent;
-            const n   = parseFloat(raw);
+            const n   = parseFloat(raw.replace(/,/g, ""));
             if (isNaN(n)) return;
             let start = null;
             const dur = 1200;
@@ -231,7 +231,8 @@
               const prog = Math.min((ts - start) / dur, 1);
               const ease = 1 - Math.pow(1 - prog, 3);
               const val  = Math.round(ease * n);
-              num.textContent = raw.includes("+") ? val + "+" : String(val);
+              const txt = raw.includes(",") ? val.toLocaleString("en-US") : String(val);
+              num.textContent = raw.includes("+") ? txt + "+" : txt;
               if (prog < 1) requestAnimationFrame(step);
             };
             requestAnimationFrame(step);
